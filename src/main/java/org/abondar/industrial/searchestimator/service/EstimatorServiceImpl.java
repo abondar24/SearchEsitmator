@@ -17,7 +17,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+/**
+ * Implementation of REST Service
+ */
 @Path("/")
 public class EstimatorServiceImpl implements EstimatorService {
 
@@ -52,25 +54,25 @@ public class EstimatorServiceImpl implements EstimatorService {
 
     private List<String> getAutoCompleteResults(String keyword) {
         WebClient client = WebClient
-                .create(AmazonCredsUtil.ENDPOINT, Collections.singletonList(new JacksonJsonProvider()));
+                .create(AmazonParamsUtil.ENDPOINT, Collections.singletonList(new JacksonJsonProvider()));
 
-        client.path(AmazonCredsUtil.SUGGESTION_PATH)
-                .query("session-id", AmazonCredsUtil.SESSION_ID)
-                .query("customer-id", AmazonCredsUtil.CUSTOMER_ID)
-                .query("request-id", AmazonCredsUtil.REQUEST_ID)
-                .query("page-type", AmazonCredsUtil.PAGE_TYPE)
-                .query("lop", AmazonCredsUtil.LANG)
-                .query("site-variant", AmazonCredsUtil.SITE_VARIANT)
-                .query("client-info", AmazonCredsUtil.CLIENT_INFO)
-                .query("mid", AmazonCredsUtil.MID)
-                .query("alias", AmazonCredsUtil.ALIAS)
-                .query("suggestion-type", AmazonCredsUtil.SUGGESTION_TYPE)
-                .query("b2b", AmazonCredsUtil.B2B)
-                .query("fresh", AmazonCredsUtil.FRESH)
-                .query("ks", AmazonCredsUtil.KS)
+        client.path(AmazonParamsUtil.SUGGESTION_PATH)
+                .query("session-id", AmazonParamsUtil.SESSION_ID)
+                .query("customer-id", AmazonParamsUtil.CUSTOMER_ID)
+                .query("request-id", AmazonParamsUtil.REQUEST_ID)
+                .query("page-type", AmazonParamsUtil.PAGE_TYPE)
+                .query("lop", AmazonParamsUtil.LANG)
+                .query("site-variant", AmazonParamsUtil.SITE_VARIANT)
+                .query("client-info", AmazonParamsUtil.CLIENT_INFO)
+                .query("mid", AmazonParamsUtil.MID)
+                .query("alias", AmazonParamsUtil.ALIAS)
+                .query("suggestion-type", AmazonParamsUtil.SUGGESTION_TYPE)
+                .query("b2b", AmazonParamsUtil.B2B)
+                .query("fresh", AmazonParamsUtil.FRESH)
+                .query("ks", AmazonParamsUtil.KS)
                 .query("prefix", keyword)
-                .query("fb", AmazonCredsUtil.FB)
-                .query("_", AmazonCredsUtil.UNDERSCORE);
+                .query("fb", AmazonParamsUtil.FB)
+                .query("_", AmazonParamsUtil.UNDERSCORE);
 
         Response response = client.get();
 

@@ -19,7 +19,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * Configuration for REST service
+ */
 @Configuration
 @Component
 @ImportResource({"classpath:META-INF/cxf/cxf.xml"})

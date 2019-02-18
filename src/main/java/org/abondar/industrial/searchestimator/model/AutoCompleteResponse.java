@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
+/**
+ * POJO class for reading response of autocomplete API
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AutoCompleteResponse {
 

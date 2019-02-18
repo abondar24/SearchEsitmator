@@ -10,8 +10,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Score estimator tests
+ */
 public class ScoreEstimatorTest {
 
+    /**
+     * Unit test for regular expression which finds occurrences
+     */
     @Test
     public void regexTest(){
         String keyword = "test";
@@ -25,6 +31,9 @@ public class ScoreEstimatorTest {
 
     }
 
+    /**
+     * Unit test for finding occurrences if keyword is a single word
+     */
     @Test
     public void occurrenceSingleKeywordTest(){
         String keyword = "test";
@@ -38,6 +47,9 @@ public class ScoreEstimatorTest {
     }
 
 
+    /**
+     * Unit test for finding occurrences if keyword has several words
+     */
     @Test
     public void occurrenceMultiKeywordTest(){
         String keyword = "big test";
@@ -51,6 +63,9 @@ public class ScoreEstimatorTest {
     }
 
 
+    /**
+     * Unit test for score estimation
+     */
     @Test
     public void scoreTest(){
         String keyword = "test";

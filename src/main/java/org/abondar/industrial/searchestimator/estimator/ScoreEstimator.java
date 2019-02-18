@@ -3,6 +3,9 @@ package org.abondar.industrial.searchestimator.estimator;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The class for score estimation
+ */
 public class ScoreEstimator {
 
     //3 times ten occurrences
@@ -19,6 +22,10 @@ public class ScoreEstimator {
     }
 
 
+    /**
+     * Calculates the number of keyword occurrences in autocomplete results
+     * @param reqResult - results of request to autocomplete API
+     */
     public void calcOccurrence(List<String> reqResult) {
         String regex = "(.* )*(" + keyword + ")( .*)*";
         long numOcc = reqResult.stream()
@@ -27,6 +34,9 @@ public class ScoreEstimator {
         scores.add((int) numOcc);
     }
 
+    /**
+     * Estimate the score
+     */
     public int estimate() {
 
         int sum = scores.stream().mapToInt(Integer::intValue).sum();

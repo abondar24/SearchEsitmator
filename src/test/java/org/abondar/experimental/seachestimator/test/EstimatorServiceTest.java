@@ -20,7 +20,9 @@ import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 
-
+/**
+ * REST API integration test
+ */
 @SpringBootTest(classes=Main.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 public class EstimatorServiceTest {
@@ -41,8 +43,11 @@ public class EstimatorServiceTest {
         server.start();
     }
 
+    /**
+     * Call Test REST service implementation and get response
+     */
     @Test
-    public void testEcho() {
+    public void testEstimatorService() {
         String keyword="test";
         WebClient client = WebClient.create(endpoint, Collections.singletonList(new JacksonJsonProvider()));
 

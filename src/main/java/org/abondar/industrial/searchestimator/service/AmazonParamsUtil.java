@@ -1,6 +1,9 @@
 package org.abondar.industrial.searchestimator.service;
 
-public class AmazonCredsUtil {
+/**
+ * Query paramenters for autocomplete api
+ */
+public class AmazonParamsUtil {
     public static final String ENDPOINT = "https://completion.amazon.co.uk/api/2017";
     public static final String SUGGESTION_PATH = "/suggestions";
     public static final String SESSION_ID = "262-3750558-0729328";

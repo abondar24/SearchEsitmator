@@ -2,7 +2,9 @@ package org.abondar.industrial.searchestimator.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
+/**
+ * POJO class for reading suggestion of autocomplete API
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AutoCompleteSuggestion {
 

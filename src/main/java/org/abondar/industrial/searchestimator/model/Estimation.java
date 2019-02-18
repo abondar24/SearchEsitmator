@@ -2,6 +2,9 @@ package org.abondar.industrial.searchestimator.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * POJO class for generating JSON response
+ */
 @XmlRootElement
 public class Estimation {
 
