@@ -1,6 +1,5 @@
 package org.abondar.experimental.seachestimator.test;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.abondar.industrial.searchestimator.model.Estimation;
 import org.abondar.industrial.searchestimator.service.EstimatorService;
 
@@ -12,7 +11,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
-
 @Path("/")
 public class EstimatorServiceTestImpl implements EstimatorService {
 
@@ -21,6 +19,6 @@ public class EstimatorServiceTestImpl implements EstimatorService {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public Response estimate(@QueryParam("keyword") String keyword) {
-        return Response.ok(new Estimation(keyword,50)).build();
+        return Response.ok(new Estimation(keyword, 50)).build();
     }
 }
