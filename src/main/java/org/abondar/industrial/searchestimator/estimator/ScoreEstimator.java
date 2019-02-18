@@ -9,7 +9,7 @@ import java.util.List;
 public class ScoreEstimator {
 
     //3 times ten occurrences
-    private static final double MAX_SCORE = 30;
+    private static final double MAX_OCCURENCES = 30;
 
     private String keyword;
 
@@ -41,7 +41,7 @@ public class ScoreEstimator {
 
         int sum = scores.stream().mapToInt(Integer::intValue).sum();
 
-        return Double.valueOf((sum / MAX_SCORE) * 100).intValue();
+        return Double.valueOf((sum / MAX_OCCURENCES) * 100).intValue();
     }
 
     public List<Integer> getScores() {

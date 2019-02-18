@@ -55,7 +55,7 @@ public class ScoreEstimatorTest {
         String keyword = "big test";
         ScoreEstimator sc = new ScoreEstimator(keyword);
 
-        List<String> reqResults = Arrays.asList("big test1", "bigtest","test really big","big test", "really test big","more big test");
+        List<String> reqResults = Arrays.asList("big test1", "bigtest","big really test","big test", "really test big","more big test");
         sc.calcOccurrence(reqResults);
 
         int occ = sc.getScores().get(0);
