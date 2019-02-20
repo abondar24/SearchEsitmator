@@ -7,11 +7,12 @@ import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.jaxrs.JAXRSBindingFactory;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
 import org.apache.cxf.jaxrs.client.WebClient;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -24,7 +25,7 @@ import static org.junit.Assert.assertEquals;
  * REST API integration test
  */
 @SpringBootTest(classes=Main.class)
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 public class EstimatorServiceTest {
 
     private Server server;
@@ -32,7 +33,7 @@ public class EstimatorServiceTest {
     private String endpoint = "local://estimator_test";
 
 
-    @Before
+    @BeforeEach
     public void beforeMethod() {
         JAXRSServerFactoryBean factory = new JAXRSServerFactoryBean();
         factory.setBindingId(JAXRSBindingFactory.JAXRS_BINDING_ID);
