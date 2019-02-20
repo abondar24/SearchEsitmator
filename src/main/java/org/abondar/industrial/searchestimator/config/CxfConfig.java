@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.HashMap;
@@ -24,8 +25,7 @@ import java.util.Map;
  */
 @Configuration
 @Component
-@ImportResource({"classpath:META-INF/cxf/cxf.xml"})
-public class CxfConfig extends WebMvcConfigurerAdapter {
+public class CxfConfig implements WebMvcConfigurer {
 
 
     @Bean(name = Bus.DEFAULT_BUS_ID)
